@@ -47,7 +47,13 @@ toBe :(val2) => {
 };
 ```
 ## Day 4 
-###### Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
+###### Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
+
+The three functions are:
+
+increment() increases the current value by 1 and then returns it.
+decrement() reduces the current value by 1 and then returns it.
+reset() sets the current value to init and then returns it.
 
 ```javascript
 const createCounter = (init) => {
