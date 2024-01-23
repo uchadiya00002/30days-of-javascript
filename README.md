@@ -155,3 +155,61 @@ const functionComposition = (functions, x) => {
 };
 
 ```
+## Day 9 
+###### Write a function argumentsLength that returns the count of arguments passed to it.
+
+Example 1:
+
+Input: args = [5]
+Output: 1
+Explanation:
+argumentsLength(5); // 1
+
+```javascript
+const argumentLength = (...args) => { return arguments.length };
+```
+## Day 10 
+###### Given a function fn, return a new function that is identical to the original function except that it ensures fn is called at most once.
+
+The first time the returned function is called, it should return the same result as fn.
+Every subsequent time it is called, it should return undefined.
+
+```javascript
+const once = function(fn) {
+
+  let hasBeenCalled = false;
+  let result;
+
+  return function(...args) {
+    if (!hasBeenCalled) {
+      result = fn(...args);
+      hasBeenCalled = true;
+      return result;
+    } else {
+      return undefined;
+    }
+  }
+
+};
+```
+## Day 11 
+###### Given a function fn, return a memoized version of that function.
+
+A memoized function is a function that will never be called twice with the same inputs. Instead it will return a cached value.
+
+```javascript
+const memoize = (fn) => {
+    let memo = {};
+    
+    return (...args) => {
+        let key = JSON.stringify(args);
+        if( key in memo){
+            return memo[key];
+        }else{
+             let temp = fn(...args);
+            memo[key] = temp;
+            return temp;
+        }
+    }
+}
+```
