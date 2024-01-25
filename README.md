@@ -213,3 +213,21 @@ const memoize = (fn) => {
     }
 }
 ```
+## Day 12 
+###### Given two promises promise1 and promise2, return a new promise. promise1 and promise2 will both resolve with a number. The returned promise should resolve with the sum of the two numbers.
+
+```javascript
+const addTwoPromises = async (promise1, promise2) => {
+      const [value1, value2] = await Promise.all([promise1, promise2]);
+  return value1 + value2;
+};
+```
+
+## Day 13 
+###### Given a positive integer millis, write an asynchronous function that sleeps for millis milliseconds. It can resolve any value.
+
+```javascript
+async function sleep(millis) {
+     return new Promise((resolve, reject) => { setTimeout(() => { console.log("hello"); resolve(200); }, millis); });
+}
+```
